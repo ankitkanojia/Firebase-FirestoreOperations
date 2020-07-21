@@ -20,6 +20,19 @@ class App extends Component {
       });
   }
 
+  DeleteRecord = (Obj) => {
+    // Delete document using delete option from firestore database
+    FireBaseContext().collection("Students")
+      .doc(Obj.Id)
+      .delete()
+      .then(function () {
+        console.log("Student details successfully deleted!");
+      }).catch(
+        function (error) {
+          console.error("Error removing document: ", error);
+        });
+  }
+
   render() {
     return (
       <React.Fragment>
