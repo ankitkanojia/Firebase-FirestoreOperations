@@ -1,6 +1,7 @@
 import * as firebase from 'firebase'
 import 'firebase/firestore';
 
+// Please replace your Firebase web app credentials and keys here.
 const firebaseConfig = {
   apiKey: "XXXX-XXXX-XXXX",
   authDomain: "XXXX-app-web.firebaseapp.com",

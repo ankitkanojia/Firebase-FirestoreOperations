@@ -5,6 +5,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      Students: []
     }
   }
 
@@ -14,6 +15,17 @@ class App extends Component {
       .get()
       .then(collectionData => {
         // you will get student data collection in collectionData object
+        const covertedData = collectionData.docs.map(doc => {
+          const data = doc.data();
+          const Id = doc.id;
+          return { Id, ...data }
+        });
+
+        // This will convert the object along with the IDs.
+        this.setState({
+          Students: covertedData
+        });
+
         console.log('data collection : ', collectionData);
       }).catch(err => {
         // Error or Exception occure
