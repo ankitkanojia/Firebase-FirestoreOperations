@@ -25,33 +25,3 @@ FireBaseContext().collection("Students")
         console.error("Error writing document: ", error);
       });
 ```
-
-```javascript
-// Update document using set option from firestore database
-FireBaseContext().collection("Students")
-      .doc()
-      .set(obj)
-      .then(function () {
-        // Student details addedd in firebase database  
-        console.log('Student details successfully added!');
-      })
-      .catch(function (error) {
-        // Error or Exception occure
-        console.error("Error writing document: ", error);
-      });
-```
-
-```javascript
-// Delete document using delete option from firestore database
-FireBaseContext().collection("Students")
-      .doc(Obj.Id)
-      .delete()
-      .then(function () {
-        // Student details deleted from firebase database  
-        console.log("Student details successfully deleted!");
-      }).catch(
-        function (error) {
-          // Error or Exception occure
-          console.error("Error removing document: ", error);
-        });
-```
